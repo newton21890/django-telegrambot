@@ -10,6 +10,7 @@ from telegram.ext import Dispatcher
 from telegram.ext import Updater
 from telegram.error import InvalidToken, TelegramError
 import os.path
+import time
 
 import logging
 
@@ -173,6 +174,7 @@ class DjangoTelegramBot(AppConfig):
                     max_connections = b.get('WEBHOOK_MAX_CONNECTIONS', 40)
 
                     setted = bot.setWebhook(hookurl, certificate=certificate, timeout=timeout, max_connections=max_connections, allowed_updates=allowed_updates)
+                    time.sleep(5)
                     webhook_info = bot.getWebhookInfo()
                     real_allowed = webhook_info.allowed_updates if webhook_info.allowed_updates else ["ALL"]
 
