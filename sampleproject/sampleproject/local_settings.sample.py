@@ -17,6 +17,9 @@ DJANGO_TELEGRAMBOT = {
 	'BOTS' : [
         {
            'TOKEN': '123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11', #Your bot token.
+            
+            'FORCE_SETWEBHOOK': 'FALSE' # The default value is FALSE, but if you want set the webhook 
+                                        # at every start you can set this value at TRUE.
 
 		   #'ALLOWED_UPDATES':(Optional[list[str]]), # List the types of
 						   #updates you want your bot to receive. For example, specify
